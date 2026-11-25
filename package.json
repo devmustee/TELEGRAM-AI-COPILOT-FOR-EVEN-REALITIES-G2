@@ -1,0 +1,19 @@
+{
+  "name": "telegram-ai-copilot-g2",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Telegram AI Copilot for Even Realities G2 smart glasses",
+  "scripts": {
+    "dev:g2": "npm --prefix apps/g2-app run dev",
+    "dev:backend": "npm --prefix apps/backend run dev",
+    "build:g2": "npm --prefix apps/g2-app run build",
+    "build:backend": "npm --prefix apps/backend run build",
+    "build": "npm run build:backend && npm run build:g2",
+    "typecheck": "npm --prefix apps/backend run typecheck && npm --prefix apps/g2-app run typecheck",
+    "test:g2": "./apps/backend/node_modules/.bin/tsx --test apps/g2-app/tests/g2.test.ts apps/g2-app/tests/controller.test.ts",
+    "test:backend": "./apps/backend/node_modules/.bin/tsx --test apps/backend/tests/phase4.test.ts apps/backend/tests/phase5.test.ts apps/backend/tests/phase6.test.ts",
+    "test": "npm run test:g2 && npm run test:backend",
+    "sim": "evenhub-simulator http://localhost:5173",
+    "pack": "npm run build:g2 && evenhub pack apps/g2-app/app.json apps/g2-app/dist -o telegram-ai-copilot.ehpk"
+  }
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Telegram AI Copilot — Even G2</title>
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: #141816;
+        color: #E5E5E5;
+        font: 14px/1.4 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        touch-action: manipulation;
+        -webkit-text-size-adjust: 100%;
+        overscroll-behavior: none;
+      }
+      #app {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 16px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        color: #8ee8af;
+      }
+      .g2-mirror {
+        background: #06130b;
+        border: 1px solid #266b43;
+        border-radius: 8px;
+        padding: 12px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        color: #7dffb3;
+        white-space: pre-wrap;
+        min-height: 160px;
+      }
+      .mirror-hdr {
+        border-bottom: 1px solid #1a472d;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+      .mirror-ftr {
+        border-top: 1px solid #1a472d;
+        padding-top: 6px;
+        margin-top: 8px;
+        font-size: 12px;
+        color: #54c482;
+      }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      button {
+        background: #1a2c22;
+        color: #d7f7e4;
+        border: 1px solid #2d5c40;
+        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #233d2f;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="bar">
+        <strong>TELEGRAM AI COPILOT · G2 COMPANION</strong>
+        <span id="status">Initializing bridge...</span>
+      </div>
+      <div class="g2-mirror">
+        <div id="mirror-hdr" class="mirror-hdr">LOADING...</div>
+        <div id="mirror-body"></div>
+        <div id="mirror-ftr" class="mirror-ftr"></div>
+      </div>
+      <div class="controls" id="screen-buttons"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
